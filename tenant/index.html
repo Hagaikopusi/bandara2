@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Tenant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <h1 id="tenant-welcome">Dashboard Tenant</h1>
+            <div class="header-info">
+                <span id="current-date"></span>
+                <button id="logout-btn" class="header-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="form-box">
+            <h2>Kirim Konten Promo Baru</h2>
+            <p>Konten yang Anda kirim akan ditinjau oleh Admin sebelum ditampilkan di Landing Page.</p>
+            <form id="promo-form">
+                <div class="input-group">
+                    <label for="title">Judul Utama Promo</label>
+                    <input type="text" id="title" placeholder="Cth: Diskon Fashion Terkini" required>
+                </div>
+                <div class="input-group">
+                    <label for="header-text">Teks Header di Landing Page</label>
+                    <input type="text" id="header-text" placeholder="Cth: Promo Spesial Minggu Ini" required>
+                </div>
+                <div class="input-group">
+                    <label for="caption">Teks Caption pada Gambar</label>
+                    <input type="text" id="caption" placeholder="Cth: Diskon 50% Semua Item" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="duration">Durasi Tampilan di Landing Page</label>
+                    <select id="duration" required>
+                        <option value="" disabled selected>Pilih durasi...</option>
+                        <option value="3600">1 Jam</option>
+                        <option value="2592000">1 Bulan</option>
+                        <option value="7776000">3 Bulan</option>
+                        <option value="15552000">6 Bulan</option>
+                        <option value="31536000">1 Tahun</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="image-upload">Upload Gambar Promo</label>
+                    <p class="input-hint">Ukuran gambar wajib 330 x 420 pixel agar tampilan bagus.</p>
+                    <input type="file" id="image-upload" class="file-input" accept="image/png, image/jpeg, image/webp" required>
+                    <label for="image-upload" class="file-input-label">
+                        <i class="fa-solid fa-upload"></i>
+                        <span>Pilih file...</span>
+                    </label>
+                </div>
+                <div class="image-preview-container">
+                    <img id="image-preview" src="#" alt="Preview Gambar" class="image-preview">
+                </div>
+                <p id="error-message" class="message error"></p>
+                <button type="submit" class="submit-btn">Kirim untuk Persetujuan</button>
+            </form>
+            <p id="success-message" class="message success"></p>
+        </div>
+
+        <section class="status-section">
+            <h2>Status Pengajuan Promo Anda</h2>
+            <div id="promo-status-list" class="promo-list">
+                </div>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

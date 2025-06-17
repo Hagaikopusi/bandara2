@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Admin & Tenant | Bandara Internasional Kualanamu</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <div class="header-container">
+        </div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-box">
+            <h2>Selamat Datang Kembali</h2>
+            <p class="subtitle">Silakan login menggunakan akun Anda</p>
+
+            <form id="login-form" novalidate>
+                <div class="role-switcher">
+                    <button type="button" id="admin-btn" class="role-btn active" data-role="admin">
+                        <i class="fa-solid fa-user-shield"></i> Admin
+                    </button>
+                    <button type="button" id="tenant-btn" class="role-btn" data-role="tenant">
+                        <i class="fa-solid fa-store"></i> Tenant
+                    </button>
+                </div>
+                
+                <input type="hidden" id="role-input" name="role" value="admin">
+
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye-slash" id="toggle-password"></i>
+                </div>
+                
+                <p id="error-message" class="error-message"></p>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="login-script.js"></script>
+</body>
+</html>

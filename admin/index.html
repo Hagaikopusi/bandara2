@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <h1>Dashboard Admin</h1>
+            <div class="header-info">
+                <span id="current-date"></span>
+                <button id="logout-btn" class="header-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="promo-section">
+            <h2>Persetujuan Promo Tertunda</h2>
+            <div id="pending-list" class="promo-list">
+                </div>
+            <div id="pending-pagination" class="pagination-controls">
+                <button id="pending-prev-btn" class="btn pagination-btn">Previous</button>
+                <span id="pending-page-info"></span>
+                <button id="pending-next-btn" class="btn pagination-btn">Next</button>
+            </div>
+        </section>
+
+        <section class="promo-section">
+            <h2>Promo yang Sudah Disetujui</h2>
+            <div id="approved-list" class="promo-list">
+                 </div>
+            <div id="approved-pagination" class="pagination-controls">
+                <button id="approved-prev-btn" class="btn pagination-btn">Previous</button>
+                <span id="approved-page-info"></span>
+                <button id="approved-next-btn" class="btn pagination-btn">Next</button>
+            </div>
+        </section>
+
+        <section class="log-section">
+            <div class="log-header">
+                <h2>Log Aktivitas Persetujuan</h2>
+                <button id="download-log-btn" class="btn">
+                    <i class="fa-solid fa-download"></i> Unduh Log (Excel)
+                </button>
+            </div>
+
+            <div class="log-filters">
+                <div class="filter-group">
+                    <input type="search" id="log-search-input" placeholder="Cari judul atau tenant...">
+                </div>
+                <div class="filter-group">
+                    <label for="start-date">Dari Tanggal:</label>
+                    <input type="date" id="start-date">
+                </div>
+                <div class="filter-group">
+                    <label for="end-date">Sampai Tanggal:</label>
+                    <input type="date" id="end-date">
+                </div>
+                <button id="reset-filter-btn" class="btn">Reset Filter</button>
+            </div>
+
+            <div class="log-table-container">
+                <table class="log-table">
+                    <thead>
+                        <tr>
+                            <th>Tanggal & Waktu</th>
+                            <th>Keterangan</th>
+                            <th>Judul Promo</th>
+                            <th>Tenant</th>
+                            <th>Durasi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="log-table-body">
+                        </tbody>
+                </table>
+            </div>
+            <div id="log-pagination" class="pagination-controls">
+                <button id="log-prev-btn" class="btn pagination-btn">Previous</button>
+                <div id="log-page-jump" class="page-jump-container">
+                    <span>Halaman</span>
+                    <input type="number" id="log-page-input" class="page-input" min="1">
+                    <span>dari <span id="log-total-pages">1</span></span>
+                </div>
+                <button id="log-next-btn" class="btn pagination-btn">Next</button>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
